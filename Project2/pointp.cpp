@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <iostream>
-
+#include <vector>
 
 char* rev_str(char* dest,  char* src)
 {
@@ -51,7 +51,7 @@ void test01() {
 
 
 
-int main()
+int main7()
 {
 	//char src[] = "eeddccbbaa";
 	//char dest[1024] = { 0 };
@@ -60,12 +60,46 @@ int main()
 
 	//printf("%s \n", dest);
 
-	test01();
+	//test01();
 
-	int a = 40;
-	int b = 430;
-	const int* p = &a;//常量指针 
-	p = &b;
+	//int a = 40;
+	//int b = 430;
+	//const int* p = &a;//常量指针 
+	//p = &b;
+
+
+	//vector<int> vec;
+	//cout << "init size of " << vec.size() << endl;
+	//for (int i = 0; i < 10; i++) {
+	//	vec.push_back(i);
+	//};
+	//cout << "pushback first size " << vec.size() << endl;
+
+
+	//for (int i = 0; i < 7; i++) {
+	//
+	//	vec.push_back(i);
+	//}
+	//cout << "pushback secend size " << vec.size() << endl;
+	//vector<int> ::iterator ve = vec.begin();
+	//while (ve != vec.end()) {
+
+	//	cout << *ve << endl;
+	//	ve++;
+	//}
+
+	int a[10] = { 0 };
+
+	for (int i = 0; i < 5; i++) {
+		a[i] = i;
+	}
+
+	cout << sizeof(a) << endl;
+
+	cout << sizeof(a)/sizeof(int) << endl;
+
+
+
 
 
 

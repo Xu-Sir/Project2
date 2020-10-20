@@ -139,12 +139,20 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="connect.cpp" />
+    <ClCompile Include="construct.cpp" />
+    <ClCompile Include="extendTest.cpp" />
+    <ClCompile Include="fileOption.cpp" />
     <ClCompile Include="mainpro.cpp" />
+    <ClCompile Include="myArray.cpp" />
+    <ClCompile Include="myArrays.cpp" />
     <ClCompile Include="namespe.cpp" />
     <ClCompile Include="pointp.cpp" />
     <ClCompile Include="swap.cpp" />
     <ClCompile Include="tempnamespec.cpp" />
+    <ClCompile Include="test.cpp" />
     <ClCompile Include="yinyong.cpp" />
+    <ClCompile Include="conntect.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="swapa.h" />
