@@ -251,7 +251,7 @@ void emptyBooks(AddressBooks *abs) {
 	system("pause");
 	system("cls");
 }
-int main() {
+int mainconnect() {
 
 	AddressBooks *abs = new AddressBooks();
 	abs->size = 0;

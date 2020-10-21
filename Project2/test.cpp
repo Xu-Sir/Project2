@@ -1,17 +1,20 @@
 #include <iostream>
 #include <string>
-#include "myArrays.cpp"
-#include "conntect.cpp"
+//#include "myArrays.cpp"
+//#include "conntect.cpp"
+#include <fstream>
+
 
 using namespace std;
 
-class Person {
+class Person12 {
 public :
-	int age = 0;
-	string name = "";
+	int age;
+	string name;
+	int id;
 };
 
-int main40() {
+int maintest() {
 
 	//MyArray<Person> mya(5);
 
@@ -82,11 +85,46 @@ int main40() {
 
 
 
-	cout << "" << endl;
+	//cout << "" << endl;
 
 
+	Person12 person;
+	person.age = 30;
+	person.name="张三啊张三";
+	person.id = 32;
+
+	//Person *person = new Person();
+	//person->name = "张三那啊 张三";
+	//person->age = 30;
 
 
+	ofstream ofs;
+	ofs.open("F:/write.txt");
+	
+	ofs << person.name << " "
+		<< person.age  << " "
+		<< person.id   << endl;
+
+	//ofs.write((const char*) &person, sizeof(Person12));
+
+	ofs.close();
+
+	ifstream ifs;
+	ifs.open("f:/write.txt");
+	//char name[1024] = {0};
+	int age;
+	int id;
+	string name;
+
+	ifs >> name;
+	ifs >> age;
+	ifs >> id;
+
+	cout << name << endl;
+	cout << age << endl;
+	cout << id << endl;
+	ifs.close();
+	
 
 
 	return 0;
