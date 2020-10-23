@@ -28,16 +28,8 @@ using namespace std;
 
 
 
-int main()
+int maintest()
 {
-
-
-	Worker* worker = NULL;
-	worker = new Employee(1, "张三", 2);
-	worker->showInfo();
-	delete worker;
-
-
 
 	WorkerManager wmg;
 	int choice = 0;
@@ -50,21 +42,26 @@ int main()
 
 		switch (choice)
 		{
-		case 0:
+		case 0://退出
+			wmg.exitSystem();
 			break;
-		case 1:
+		case 1://添加职工
+			wmg.addEmp();
 			break;
-		case 2:
+		case 2://显示	
+			wmg.showInfo();
 			break;
-		case 3:
+		case 3://删除
 			break;
-		case 4:
+		case 4://修改	
 			break;
-		case 5:
+		case 5://查找
 			break;
-		case 6:
+		case 6://排序
+			wmg.orderEmp();
 			break;
-		case 7:
+		case 7://清空
+			wmg.cleanBook();
 			break;
 		default:
 			system("cls");

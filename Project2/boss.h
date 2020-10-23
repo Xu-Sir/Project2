@@ -7,6 +7,7 @@ using namespace std;
 
 class Boss :public Worker
 {
+public:
 	Boss(int idp, string namep, int didp);
 	void showInfo();
 	string getDeptName();

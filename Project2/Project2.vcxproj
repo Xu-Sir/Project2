@@ -167,6 +167,9 @@
     <ClInclude Include="worker.h" />
     <ClInclude Include="workerManager.h" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\..\dll动态连接库\Dll1\Debug\Dll1.dll" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

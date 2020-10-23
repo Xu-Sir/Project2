@@ -3,7 +3,7 @@
 //#include "myArrays.cpp"
 //#include "conntect.cpp"
 #include <fstream>
-
+#include <Windows.h>
 
 using namespace std;
 
@@ -14,7 +14,14 @@ public :
 	int id;
 };
 
-int maintest() {
+
+
+HMODULE hm = LoadLibrary(L"F:\\dll动态连接库\\Dll1\\Debug\\Dll1.dll");
+
+typedef int (*_Hello)(int a, int b);
+typedef int (*_Hell)(int a);
+
+int main() {
 
 	//MyArray<Person> mya(5);
 
@@ -88,43 +95,120 @@ int maintest() {
 	//cout << "" << endl;
 
 
-	Person12 person;
-	person.age = 30;
-	person.name="张三啊张三";
-	person.id = 32;
+	//Person12 person;
+	//person.age = 30;
+	//person.name="张三啊张三";
+	//person.id = 32;
 
 	//Person *person = new Person();
 	//person->name = "张三那啊 张三";
 	//person->age = 30;
 
 
-	ofstream ofs;
-	ofs.open("F:/write.txt");
-	
-	ofs << person.name << " "
-		<< person.age  << " "
-		<< person.id   << endl;
+	//ofstream ofs;
+	//ofs.open("F:/write.txt");
+	//
+	//ofs << person.name << " "
+	//	<< person.age  << " "
+	//	<< person.id   << endl;
 
 	//ofs.write((const char*) &person, sizeof(Person12));
 
-	ofs.close();
+	//ofs.close();
 
-	ifstream ifs;
-	ifs.open("f:/write.txt");
+	//ifstream ifs;
+	//ifs.open("f:/write.txt");
 	//char name[1024] = {0};
-	int age;
-	int id;
-	string name;
+	//int age;
+	//int id;
+	//string name;
 
-	ifs >> name;
-	ifs >> age;
-	ifs >> id;
+	//ifs >> name;
+	//ifs >> age;
+	//ifs >> id;
 
-	cout << name << endl;
-	cout << age << endl;
-	cout << id << endl;
-	ifs.close();
+	//cout << name << endl;
+	//cout << age << endl;
+	//cout << id << endl;
+	//ifs.close();
 	
+
+//Person12* per = new Person12();
+//per->age = 8;
+//per->id = 12;
+//per->name = "zhangsan";
+
+//Person12** arr;
+//arr = new Person12*[20];
+//arr[0] = per;
+
+//cout << sizeof(Person12) << endl;
+//ifstream ifs;
+//ifs.open("f:/workerBook.txt");
+
+
+//while (ifs >> id >> name >> age)
+//{
+//	cout << " id: "<< id << " name: "<< name<< " age: " << age << endl;
+//
+//}
+
+
+//char arr[] = { "zhangsana" };
+//	//int arr[] = {10,15,2,56,4,88,55,6};
+//
+//	
+//for (int i = 0; i < sizeof(arr) / sizeof(char); i++ )
+//{
+//	for (int j = i+1; j < sizeof(arr) / sizeof(char); j++)
+//	{
+//		char temp;
+//		if (arr[i] < arr[j]) {
+//
+//			temp = arr[j];
+//			arr[j] = arr[i];
+//			arr[i] = temp;
+//
+//		}
+//
+//	}
+//	
+//}
+
+
+//cout << arr << endl;
+
+
+
+
+
+
+
+
+
+
+
+
+
+if (hm == NULL) {
+	cout << "加载dll失败 没找到" << endl;
+	return 0;
+}
+
+
+
+_Hello hel =  (_Hello)GetProcAddress(hm, "Hello");
+_Hell hel2 =  (_Hell)GetProcAddress(hm, "getNum");
+int c = (*hel)(3, 5);
+int b = (*hel2)(3);
+
+cout << c << endl;
+cout << b << endl;
+
+
+
+
+
 
 
 	return 0;
